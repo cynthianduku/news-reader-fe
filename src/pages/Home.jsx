@@ -1,12 +1,10 @@
+import NewsList from "../components/NewsList";
+
 export default function Home({ searchQuery }) {
   return (
-    <main className="p-4">
-      <h2 className="text-xl font-semibold mb-4">
-        Showing results for: {searchQuery || "Top Headlines"}
-      </h2>
-      <div>
-        {/* NewsList will go here */}
-      </div>
+    <main className="max-w-6xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center">Top Headlines</h1>
+      <NewsList searchQuery={searchQuery} />
     </main>
   );
 }

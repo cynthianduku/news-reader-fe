@@ -1,7 +1,3 @@
-import React from "react";
-
-const Error = ({ message }) => {
-  return <div className="text-center mt-10 text-red-500">{message}</div>;
-};
-
-export default Error;
+export default function Error({ message }) {
+  return <p className="text-center p-4 text-red-500">Error: {message}</p>;
+}
