@@ -1,15 +1,12 @@
-import Navbar from "../components/Navbar";
-import SearchBar from "../components/SearchBar";
-import NewsList from "../components/NewsList";
-
-const Home = () => {
+export default function Home({ searchQuery }) {
   return (
-    <div>
-      <Navbar />
-      <SearchBar />
-      <NewsList />
-    </div>
+    <main className="p-4">
+      <h2 className="text-xl font-semibold mb-4">
+        Showing results for: {searchQuery || "Top Headlines"}
+      </h2>
+      <div>
+        {/* NewsList will go here */}
+      </div>
+    </main>
   );
-};
-
-export default Home;
+}
