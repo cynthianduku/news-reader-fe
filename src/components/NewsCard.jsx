@@ -1,31 +1,25 @@
-export default function NewsCard({ article }) {
-  const date = article.publishedAt
-    ? new Date(article.publishedAt).toLocaleDateString()
-    : "";
+import { Link } from "react-router-dom";
 
+export default function NewsCard({ article, id }) {
   return (
-    <div className="bg-white rounded-lg shadow flex flex-col h-full max-w-xs">
-  {article.urlToImage && (
-    <img
-      src={article.urlToImage}
-      alt={article.title}
-      className="w-full h-32 object-cover rounded-t-lg"
-    />
-  )}
-  <div className="p-3 flex flex-col flex-1">
-    <h3 className="font-bold text-base mb-1 line-clamp-2">{article.title}</h3>
-    <p className="text-sm text-gray-600 mb-2 line-clamp-3">
-      {article.description || "No description available."}
-    </p>
-    <a
-      href={article.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="mt-auto text-blue-600 text-sm font-medium hover:underline"
-    >
-      Read more →
-    </a>
-  </div>
-</div>
+    <Link to={`/article/${id}`} state={{ article }}>
+      <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col h-full">
+        {article.urlToImage && (
+          <img
+            src={article.urlToImage}
+            alt={article.title}
+            className="w-full h-48 sm:h-40 md:h-48 object-cover rounded-t-2xl"
+          />
+        )}
+        <div className="p-4 flex-1 flex flex-col justify-between">
+          <h3 className="font-bold text-lg mb-2 line-clamp-2 text-gray-900">
+            {article.title}
+          </h3>
+          <p className="text-gray-700 text-sm line-clamp-3">
+            {article.description?.slice(0, 100) || ""}
+          </p>
+        </div>
+      </div>
+    </Link>
   );
 }

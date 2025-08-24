@@ -1,14 +1,29 @@
-import React from "react";
+import { useLocation, useParams } from "react-router-dom";
 
-const NewsDetail = ({ article }) => {
-  if (!article) return null;
+export default function NewsDetail() {
+  const { state } = useLocation();
+  const { article } = state || {};
+  const { id } = useParams();
+
+  if (!article) {
+    return <p className="text-center text-gray-400">Article not found (ID: {id})</p>;
+  }
+
   return (
-    <div className="p-4 border rounded shadow mt-4">
-      <h2 className="font-bold text-2xl">{article.title}</h2>
-      <p className="mt-2 text-gray-700">{article.content || article.description}</p>
-      <a href={article.url} target="_blank" className="text-blue-600 underline mt-2 inline-block">Read more</a>
+    <div className="p-6 bg-gray-800 rounded-lg shadow mt-6">
+      {article.urlToImage && (
+        <img src={article.urlToImage} alt={article.title} className="w-full h-80 object-cover rounded mb-4" />
+      )}
+      <h2 className="font-bold text-2xl mb-3">{article.title}</h2>
+      <p className="mb-4 text-gray-300">{article.content || article.description}</p>
+      <a
+        href={article.url}
+        target="_blank"
+        rel="noreferrer"
+        className="text-blue-400 underline"
+      >
+        Read full article
+      </a>
     </div>
   );
-};
-
-export default NewsDetail;
+}
