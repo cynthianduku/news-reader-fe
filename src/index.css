@@ -3,55 +3,28 @@
 @tailwind utilities;
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #213547;
-  background-color: #ffffff;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #747bff;
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-sans);
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
+.bg-nh-graybg { background-color: #f6f7fb; }
+.bg-nh-blue { background-color: #1f3be6; }
+.bg-nh-teal { background-color: #0abf9c; }
+.bg-nh-red { background-color: #e23d3d; }
+.bg-nh-orange { background-color: #ff7a00; }
+.bg-nh-purple { background-color: #6b21a8; }
+.bg-nh-magenta { background-color: #a10f6a; }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  font-weight: 700;
-  color: #213547;
-}
+.line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-button {
-  border-radius: 0.5rem;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1rem;
-  font-weight: 500;
+input, button {
   font-family: inherit;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  transition: border-color 0.25s, background-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-  background-color: #f0f0ff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.25rem; }
