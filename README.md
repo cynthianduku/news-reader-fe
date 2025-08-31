@@ -1,12 +1,25 @@
-# React + Vite
+# NewsHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NewsHub is a React-based news aggregator that fetches articles from the NewsAPI and displays them in a clean, card-based UI. The app supports categories, search, featured news, and individual article reading.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fetch latest news from NewsAPI
+- Categories: All, World, Technology, Sports, Business, Science
+- Featured news section
+- Search articles by keyword or tags
+- Responsive card-based layout
+- Read more functionality with external links or mockup fallback
+- Mock news fallback when API is unavailable
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Tailwind CSS
+- Vite
+- Lucide React (icons)
+- Radix UI (buttons, badges, inputs)
+- JavaScript (plain, no TypeScript)
+
+## File Structure
+
